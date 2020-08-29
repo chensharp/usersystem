@@ -1,12 +1,19 @@
 package com.chenzy.demo.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
+@Entity
 public class User {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;//唯一标识
     private  String name;
     private  Integer age;
-    public User() {//无参默认构造器
+    protected User() {//无参默认构造器
     }
     public User(Long id, String name, Integer age) {
         this.id = id;
